@@ -6,6 +6,9 @@ A simple weather widget written in vanilla JS, enter a town/city in the search b
 * Pulls in temperature, weather type (rain, snow, sun etc), humidity, wind speed and pressure.
 * Different icons depending on the weather type.
 
+## Demo
+[https://tompato.github.io/weather-widget](https://tompato.github.io/weather-widget/)
+
 ### Coming soon
 * Browser based location lookup to display initial weather information
 
