@@ -1,0 +1,125 @@
+body {
+    background: #eee;
+}
+
+.container {
+    max-width: 400px;
+}
+
+.weather {
+    background-color: white;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.weather__current {
+    position: relative;
+    background-size: cover;
+    background-image: url(img/day.svg);
+    color: #243046;
+}
+
+.weather--night .weather__current {
+    background-image: url(img/night.svg);
+    color: white;
+}
+
+.weather__current__wrapper {
+    position: relative;
+    text-align: center;
+    padding: 30px 15px 45px 15px;
+    z-index: 2;
+}
+
+.weather__current h2, h3, h4 {
+    margin: 0;
+}
+
+.weather__current h2 {
+    font-size: 18px;
+    text-transform: uppercase;
+}
+
+.weather__current h3 {
+    font-size: 120px;
+    font-weight: 700;
+    line-height: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.weather__current h3 span:last-child {
+    font-size: 10px;
+    text-transform: uppercase;
+    margin: 0 0 15px 0;
+}
+
+.weather__current h4 {
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.weather__current__icon {
+    display: inline-block;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    background-color: white;
+    border-radius: 50%;
+    transform: translateX(-50%) translateY(-50%);
+}
+
+.weather__current__icon img {
+    width: 75px;
+    height: 75px
+}
+
+.weather__details {
+}
+
+.weather__details ul {
+    list-style: none;
+    display: flex;
+    background-color: #243046;
+    padding: 5px;
+    margin: 45px 15px 15px;
+    border-radius: 25px;
+}
+
+.weather--night .weather__details ul {
+    background-color: #E6ECF6;
+}
+
+.weather__details ul li {
+    flex: 1 0 33.33333333%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #E6ECF6;
+}
+
+.weather--night .weather__details ul li {
+    color: #243046;
+}
+
+.weather__details ul li span:first-child {
+    font-size: 1em;
+    font-weight: bold;
+}
+
+.weather__details ul li span:last-child {
+    font-size: 0.8em;
+}
+
+.divider {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.divider svg {
+    fill: white;
+}
