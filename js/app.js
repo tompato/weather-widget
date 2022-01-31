@@ -59,6 +59,9 @@ searchForm.addEventListener('submit', event => {
     // Pull out the search location
     const searchTerm = searchForm.search.value.trim();
 
+    // Set local storage
+    localStorage.setItem('searchTerm', searchTerm);
+
     // Reset the form so user can search again
     searchForm.reset();
 
@@ -66,4 +69,12 @@ searchForm.addEventListener('submit', event => {
     updateWeather(searchTerm)
         .then(data => updateUI(data))
         .catch(err => console.log(err));
-})
+});
+
+// If we have a search term that was previously entered and stored in local storage
+if(localStorage.getItem('searchTerm')) {
+    // Update the UI with the returned location and weather
+    updateWeather(localStorage.getItem('searchTerm'))
+        .then(data => updateUI(data))
+        .catch(err => console.log(err));
+}

@@ -5,6 +5,7 @@ A simple weather widget written in vanilla JS, enter a town/city in the search b
 * Day/Night modes on the widget depending on day/night time in the searched location
 * Pulls in temperature, weather type (rain, snow, sun etc), humidity, wind speed and pressure.
 * Different icons depending on the weather type.
+* Remembers last searched for location using local storage.
 
 ## Demo
 [https://tompato.github.io/weather-widget](https://tompato.github.io/weather-widget/)
