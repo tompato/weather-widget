@@ -2,6 +2,7 @@ const searchForm = document.querySelector('form');
 const weatherCard = document.querySelector('.weather');
 const weatherCurrent = document.querySelector('.weather__current');
 const weatherDetails = document.querySelector('.weather__details');
+const forecast = new Forecast();
 
 const updateUI = data => {
 
@@ -43,15 +44,6 @@ const updateUI = data => {
 
 };
 
-const updateWeather = async searchTerm => {
-    
-    const location = await getLocation(searchTerm);
-    const weather = await getWeather(location.Key);
-
-    return { location, weather }
-
-};
-
 searchForm.addEventListener('submit', event => {
     // Prevent default submit action
     event.preventDefault();
@@ -66,7 +58,7 @@ searchForm.addEventListener('submit', event => {
     searchForm.reset();
 
     // Update the UI with the returned location and weather
-    updateWeather(searchTerm)
+    forecast.updateWeather(searchTerm)
         .then(data => updateUI(data))
         .catch(err => console.log(err));
 });
@@ -74,7 +66,7 @@ searchForm.addEventListener('submit', event => {
 // If we have a search term that was previously entered and stored in local storage
 if(localStorage.getItem('searchTerm')) {
     // Update the UI with the returned location and weather
-    updateWeather(localStorage.getItem('searchTerm'))
+    forecast.updateWeather(localStorage.getItem('searchTerm'))
         .then(data => updateUI(data))
         .catch(err => console.log(err));
 }
