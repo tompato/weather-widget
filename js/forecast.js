@@ -6,6 +6,9 @@ class Forecast {
     }
     async updateWeather(searchTerm) {
         const location = await this.getLocation(searchTerm);
+        if(location === undefined) {
+            throw new Error('Cannot find a matching location.');
+        }
         const weather = await this.getWeather(location.Key);
         return { location, weather }
     }
